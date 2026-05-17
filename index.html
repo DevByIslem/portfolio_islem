@@ -1,116 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Islem Naimi - Data Analyst</title>
-  <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-      padding: 0;
-      background: #f5f6fa;
-      color: #222;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islem Naimi | Data Analyst</title>
 
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 30px;
-      text-align: center;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
 
-    h2 {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
-    }
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
 
-    .contact {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 14px;
-    }
+.hero h1 {
+  font-size: 40px;
+  color: #38bdf8;
+}
 
-    ul {
-      line-height: 1.6;
-    }
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #cbd5e1;
+}
 
-    .skills {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
+/* SECTION */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-    .box {
-      background: #ecf0f1;
-      padding: 10px;
-      border-radius: 8px;
-    }
-  </style>
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(56,189,248,0.2);
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* HEADER SMALL */
+h2 {
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<div class="hero">
   <h1>ISLEM NAIMI</h1>
-  <h3>DATA ANALYST</h3>
-</header>
-
-<div class="contact">
-  📍 Tunis, Tunisia | 📧 islemnaimi@gmail.com | 📞 +216 26099707<br>
-  🔗 linkedin.com/in/islem-naimi
+  <p>Data Analyst | SQL | Power BI | Python | ETL</p>
+  <a class="btn" href="https://www.linkedin.com" target="_blank">View LinkedIn</a>
 </div>
 
 <section>
   <h2>Profile Summary</h2>
   <p>
-    Senior Data Analyst with banking experience, skilled in SQL, Power BI, and data quality.
-    Experienced in validating, analyzing, and interpreting complex datasets.
+    Data Analyst with banking & international experience.
+    Skilled in SQL, Power BI, Python, ETL and data validation.
+    I turn raw data into business decisions.
   </p>
 </section>
 
 <section>
-  <h2>Work Experience</h2>
-  <ul>
-    <li><b>Data Analyst (2024 - Present)</b> - BIAT, Amen Bank, UNICEF, UNDP, UNHCR, GIZ</li>
-    <li><b>Data Scientist Intern (Feb 2024 - Jul 2024)</b> - Python, Django, ML models</li>
-    <li><b>Data & Web Developer (2022 - 2024)</b> - Survey systems, SQL, CRM integration</li>
-  </ul>
-</section>
+  <h2>Experience</h2>
+  <div class="grid">
 
-<section>
-  <h2>Education</h2>
-  <ul>
-    <li>Master Data Science (2022–2024) - ESC Manouba</li>
-    <li>Bachelor Computer Technologies (2018–2021) - ISET Kef</li>
-  </ul>
-</section>
+    <div class="card">
+      <h3>Data Analyst</h3>
+      <p>BIAT, Amen Bank, UNICEF, UNDP, UNHCR, GIZ</p>
+    </div>
 
-<section>
-  <h2>Skills</h2>
-  <div class="skills">
-    <div class="box">SQL / Power BI / Excel</div>
-    <div class="box">Python / Machine Learning</div>
-    <div class="box">Talend ETL / Data Integration</div>
-    <div class="box">Data Visualization / Reporting</div>
+    <div class="card">
+      <h3>Data Scientist Intern</h3>
+      <p>Python, ML, Django platform, automation</p>
+    </div>
+
+    <div class="card">
+      <h3>Data & Web Developer</h3>
+      <p>SQL, CRM, Survey systems, ETL workflows</p>
+    </div>
+
   </div>
 </section>
 
 <section>
-  <h2>Languages</h2>
-  <ul>
-    <li>French - B2</li>
-    <li>English - B2</li>
-    <li>German - B1</li>
-  </ul>
+  <h2>Skills</h2>
+  <div class="grid">
+
+    <div class="card">SQL / Power BI / Excel</div>
+    <div class="card">Python / Machine Learning</div>
+    <div class="card">ETL / Talend / Data Cleaning</div>
+    <div class="card">Data Visualization / Reporting</div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="card">
+    Master Data Science (ESC Manouba) + Bachelor ISET Kef
+  </div>
 </section>
 
 </body>
