@@ -5,35 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Islem Naimi | Data Analyst</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<style>
 body {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
   color: white;
 }
 
-/* HERO */
-.hero {
+/* HEADER */
+header {
   text-align: center;
-  padding: 80px 20px;
-  animation: fadeIn 1.5s ease-in-out;
+  padding: 60px 20px;
 }
 
-.hero h1 {
-  font-size: 40px;
-  color: #38bdf8;
+.profile {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #38bdf8;
 }
 
-.hero p {
+/* BUTTON */
+.btn {
+  padding: 10px 15px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
   margin-top: 10px;
-  font-size: 18px;
-  color: #cbd5e1;
+  display: inline-block;
 }
 
 /* SECTION */
@@ -43,114 +46,158 @@ section {
   padding: 40px 20px;
 }
 
-/* CARDS */
-.grid {
+/* SKILLS CAROUSEL */
+.skills-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px;
+}
+
+.skill {
+  min-width: 120px;
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  background: #38bdf8;
+  color: black;
+}
+
+/* EXPERIENCE */
+.exp-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
 }
 
-.card {
-  background: rgba(255,255,255,0.05);
+.exp-card {
+  background: rgba(255,255,255,0.08);
   padding: 20px;
   border-radius: 12px;
+  cursor: pointer;
   transition: 0.3s;
-  backdrop-filter: blur(10px);
 }
 
-.card:hover {
+.exp-card:hover {
   transform: translateY(-5px);
-  background: rgba(56,189,248,0.2);
+  background: #1e293b;
 }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #38bdf8;
-  color: black;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
 }
 
-.btn:hover {
+.modal-content {
   background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-/* HEADER SMALL */
-h2 {
-  margin-bottom: 15px;
-  color: #38bdf8;
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
+<header>
+  <img src="https://i.imgur.com/8Km9tLL.png" class="profile">
   <h1>ISLEM NAIMI</h1>
-  <p>Data Analyst | SQL | Power BI | Python | ETL</p>
-  <a class="btn" href="https://www.linkedin.com" target="_blank">View LinkedIn</a>
+  <p>Data Analyst | SQL | Power BI | Python</p>
+  <a class="btn" href="CV.pdf">Download CV</a>
+</header>
+
+<!-- SKILLS -->
+<section>
+<h2>Skills</h2>
+
+<div class="skills-container">
+
+  <div class="skill"><i class="fa-brands fa-python"></i><br>Python</div>
+  <div class="skill"><i class="fa-solid fa-database"></i><br>SQL</div>
+  <div class="skill"><i class="fa-solid fa-chart-line"></i><br>Power BI</div>
+  <div class="skill"><i class="fa-solid fa-table"></i><br>Excel</div>
+  <div class="skill"><i class="fa-solid fa-gears"></i><br>ETL</div>
+
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+<h2>Experience</h2>
+
+<div class="exp-grid">
+
+<div class="exp-card" onclick="openModal('m1')">
+<h3>Data Analyst</h3>
+<p>BIAT / UNICEF</p>
 </div>
 
-<section>
-  <h2>Profile Summary</h2>
-  <p>
-    Data Analyst with banking & international experience.
-    Skilled in SQL, Power BI, Python, ETL and data validation.
-    I turn raw data into business decisions.
-  </p>
+<div class="exp-card" onclick="openModal('m2')">
+<h3>Data Scientist Intern</h3>
+<p>Machine Learning</p>
+</div>
+
+<div class="exp-card" onclick="openModal('m3')">
+<h3>Web & Data Developer</h3>
+<p>SQL + ETL</p>
+</div>
+
+</div>
 </section>
 
-<section>
-  <h2>Experience</h2>
-  <div class="grid">
-
-    <div class="card">
-      <h3>Data Analyst</h3>
-      <p>BIAT, Amen Bank, UNICEF, UNDP, UNHCR, GIZ</p>
-    </div>
-
-    <div class="card">
-      <h3>Data Scientist Intern</h3>
-      <p>Python, ML, Django platform, automation</p>
-    </div>
-
-    <div class="card">
-      <h3>Data & Web Developer</h3>
-      <p>SQL, CRM, Survey systems, ETL workflows</p>
-    </div>
-
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✖</span>
+    <div id="modal-text"></div>
   </div>
-</section>
+</div>
 
-<section>
-  <h2>Skills</h2>
-  <div class="grid">
+<script>
+function openModal(id) {
+  let content = "";
 
-    <div class="card">SQL / Power BI / Excel</div>
-    <div class="card">Python / Machine Learning</div>
-    <div class="card">ETL / Talend / Data Cleaning</div>
-    <div class="card">Data Visualization / Reporting</div>
+  if(id === "m1") {
+    content = "Data Analyst: BIAT, Amen Bank, UNICEF, UNDP, GIZ. SQL, Power BI dashboards, data validation.";
+  }
 
-  </div>
-</section>
+  if(id === "m2") {
+    content = "Data Scientist Intern: Machine Learning, Python, Django platform, predictive models.";
+  }
 
-<section>
-  <h2>Education</h2>
-  <div class="card">
-    Master Data Science (ESC Manouba) + Bachelor ISET Kef
-  </div>
-</section>
+  if(id === "m3") {
+    content = "Web & Data Developer: CRM systems, ETL pipelines, SQL integration, automation.";
+  }
+
+  document.getElementById("modal-text").innerText = content;
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
